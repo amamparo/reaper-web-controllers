@@ -1,0 +1,20 @@
+{
+  "name": "REAPER Controller",
+  "short_name": "Controller",
+  "icons": [
+    {
+      "src": "/icon-192.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "/icon-512.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ],
+  "start_url": "/controller.html",
+  "display": "standalone",
+  "background_color": "#171717",
+  "theme_color": "#171717"
+}
