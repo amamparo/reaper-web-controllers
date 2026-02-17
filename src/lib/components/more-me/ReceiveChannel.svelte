@@ -6,9 +6,8 @@
   import { tracksStore } from '$lib/stores/tracks.svelte.js'
   import { reaperColorToCSS } from '$lib/reaper/helpers.js'
 
-  let { trackIndex, receiveIndex, send } = $props()
+  let { trackIndex, receiveIndex, send, soloed = false, anySolo = false, onToggleSolo } = $props()
 
-  // receiveIndex is negative: -1 = first receive, -2 = second, etc.
   let sourceTrack = $derived(send ? tracksStore.getTrack(send.otherTrackIndex) : null)
   let trackColor = $derived(sourceTrack ? reaperColorToCSS(sourceTrack.color) : null)
 
@@ -26,8 +25,11 @@
 </script>
 
 {#if send && sourceTrack}
-  <div class="flex flex-col gap-1 p-3 rounded-lg bg-neutral-800/50">
-    <!-- Header: color dot + name + mute -->
+  <div
+    class="flex flex-col gap-1 p-3 rounded-lg bg-neutral-800/50 transition-opacity"
+    class:opacity-40={anySolo && !soloed}
+  >
+    <!-- Header: color dot + name + solo + mute -->
     <div class="flex items-center gap-2 mb-1">
       <div
         class="w-3 h-3 rounded-full shrink-0"
@@ -36,6 +38,14 @@
       <span class="text-sm text-neutral-200 font-medium truncate flex-1">
         {sourceTrack.name}
       </span>
+      <ToggleButton
+        active={soloed}
+        onclick={onToggleSolo}
+        label="S"
+        activeColor="bg-yellow-600"
+        inactiveColor="bg-neutral-700"
+        small={true}
+      />
       <ToggleButton
         active={send.isMuted}
         onclick={toggleMute}
