@@ -74,6 +74,8 @@
     <span class="text-xs text-neutral-400 w-16 truncate shrink-0">{label}</span>
   {/if}
   <div class="fader-wrap relative flex-1">
+    <div class="fader-track" class:fader-track-large={large}></div>
+    <div class="fader-unity-tick" class:fader-unity-tick-large={large}></div>
     <input
       bind:this={rangeEl}
       type="range"
@@ -85,10 +87,9 @@
       onpointerdown={handlePointerDown}
       onpointermove={handlePointerMove}
       onpointerup={handlePointerUp}
-      class="fader-range w-full cursor-pointer touch-none"
+      class="fader-range w-full cursor-pointer touch-pan-y"
       class:fader-large={large}
     />
-    <div class="fader-unity-tick" class:fader-unity-tick-large={large}></div>
   </div>
   {#if showDb}
     <span class="text-xs text-neutral-500 w-18 text-right shrink-0 font-mono tabular-nums">
@@ -109,70 +110,135 @@
     height: 3rem;
   }
 
-  /* Track */
+  /* Native track — invisible (visual track is a separate div) */
   .fader-range::-webkit-slider-runnable-track {
-    height: 0.5rem;
-    border-radius: 9999px;
-    background: #262626;
+    height: 0.375rem;
+    background: transparent;
   }
   .fader-range.fader-large::-webkit-slider-runnable-track {
-    height: 0.75rem;
+    height: 0.5rem;
   }
   .fader-range::-moz-range-track {
-    height: 0.5rem;
-    border-radius: 9999px;
-    background: #262626;
+    height: 0.375rem;
+    background: transparent;
   }
   .fader-range.fader-large::-moz-range-track {
-    height: 0.75rem;
+    height: 0.5rem;
   }
 
-  /* Thumb */
+  /* Visual track — separate div so tick can layer above it */
+  .fader-track {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 0.375rem;
+    border-radius: 2px;
+    background: #1a1a1a;
+    box-shadow: inset 0 1px 2px rgba(0,0,0,0.6);
+    z-index: 0;
+    pointer-events: none;
+  }
+  .fader-track-large {
+    height: 0.5rem;
+  }
+
+  /* Thumb — fader knob */
   .fader-range::-webkit-slider-thumb {
     -webkit-appearance: none;
     appearance: none;
-    width: 2.5rem;
-    height: 2.5rem;
-    border-radius: 9999px;
-    background: #d4d4d4;
-    margin-top: -1rem;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.4);
+    width: 2rem;
+    height: 2rem;
+    border-radius: 3px;
+    margin-top: -0.8125rem;
+    background-image:
+      linear-gradient(to right,
+        transparent 28%,
+        rgba(0,0,0,0.4) 28%, rgba(0,0,0,0.4) 30%,
+        rgba(255,255,255,0.25) 30%, rgba(255,255,255,0.25) 32%,
+        transparent 32%,
+        transparent 48%,
+        rgba(0,0,0,0.4) 48%, rgba(0,0,0,0.4) 50%,
+        rgba(255,255,255,0.25) 50%, rgba(255,255,255,0.25) 52%,
+        transparent 52%,
+        transparent 68%,
+        rgba(0,0,0,0.4) 68%, rgba(0,0,0,0.4) 70%,
+        rgba(255,255,255,0.25) 70%, rgba(255,255,255,0.25) 72%,
+        transparent 72%),
+      linear-gradient(to bottom,
+        #e0e0e0 0%, #ccc 20%, #b0b0b0 50%, #bbb 80%, #d0d0d0 100%);
+    background-size: 100% 50%, 100% 100%;
+    background-position: center center;
+    background-repeat: no-repeat;
+    box-shadow:
+      0 1px 4px rgba(0,0,0,0.5),
+      0 0 0 0.5px rgba(0,0,0,0.2),
+      inset 0 1px 0 rgba(255,255,255,0.4),
+      inset 0 -1px 0 rgba(0,0,0,0.1);
   }
   .fader-range.fader-large::-webkit-slider-thumb {
-    width: 3rem;
-    height: 3rem;
-    margin-top: -1.125rem;
+    width: 2.25rem;
+    height: 2.5rem;
+    margin-top: -1rem;
   }
   .fader-range::-moz-range-thumb {
-    width: 2.5rem;
-    height: 2.5rem;
-    border-radius: 9999px;
-    background: #d4d4d4;
+    width: 2rem;
+    height: 2rem;
+    border-radius: 3px;
     border: none;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.4);
+    background-image:
+      linear-gradient(to right,
+        transparent 28%,
+        rgba(0,0,0,0.4) 28%, rgba(0,0,0,0.4) 30%,
+        rgba(255,255,255,0.25) 30%, rgba(255,255,255,0.25) 32%,
+        transparent 32%,
+        transparent 48%,
+        rgba(0,0,0,0.4) 48%, rgba(0,0,0,0.4) 50%,
+        rgba(255,255,255,0.25) 50%, rgba(255,255,255,0.25) 52%,
+        transparent 52%,
+        transparent 68%,
+        rgba(0,0,0,0.4) 68%, rgba(0,0,0,0.4) 70%,
+        rgba(255,255,255,0.25) 70%, rgba(255,255,255,0.25) 72%,
+        transparent 72%),
+      linear-gradient(to bottom,
+        #e0e0e0 0%, #ccc 20%, #b0b0b0 50%, #bbb 80%, #d0d0d0 100%);
+    background-size: 100% 50%, 100% 100%;
+    background-position: center center;
+    background-repeat: no-repeat;
+    box-shadow:
+      0 1px 4px rgba(0,0,0,0.5),
+      0 0 0 0.5px rgba(0,0,0,0.2),
+      inset 0 1px 0 rgba(255,255,255,0.4),
+      inset 0 -1px 0 rgba(0,0,0,0.1);
   }
   .fader-range.fader-large::-moz-range-thumb {
-    width: 3rem;
-    height: 3rem;
+    width: 2.25rem;
+    height: 2.5rem;
   }
 
-  /* Unity gain tick mark */
+  /* Unity gain tick mark — behind the knob */
   .fader-wrap {
     position: relative;
   }
+  .fader-range {
+    position: relative;
+    z-index: 2;
+  }
   .fader-unity-tick {
     position: absolute;
-    left: calc(70.71% - 0.7071 * 2.5rem + 1.25rem);
+    left: calc(70.71% - 0.7071 * 2rem + 1rem);
     top: 50%;
     transform: translate(-50%, -50%);
+    z-index: 1;
     width: 2px;
-    height: 0.75rem;
+    height: 1.25rem;
     background: #525252;
     pointer-events: none;
     border-radius: 1px;
   }
   .fader-unity-tick-large {
-    left: calc(70.71% - 0.7071 * 3rem + 1.5rem);
-    height: 1rem;
+    left: calc(70.71% - 0.7071 * 2.25rem + 1.125rem);
+    height: 1.5rem;
   }
 </style>
