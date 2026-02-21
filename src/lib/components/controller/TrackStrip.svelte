@@ -46,7 +46,7 @@
   })
 </script>
 
-<div class="rounded-lg overflow-hidden bg-neutral-800/50">
+<div class="rounded-lg overflow-hidden bg-neutral-900/50">
   <!-- Track header with color bar -->
   <div class="flex items-center gap-1.5 px-2 py-1.5" style="border-left: 3px solid {color}">
     <span class="text-xs text-neutral-500 w-5 text-center shrink-0">
@@ -56,19 +56,19 @@
 
     <!-- Buttons -->
     <ToggleButton active={isMuted} onclick={toggleMute} label="M"
-      activeColor="bg-red-600" inactiveColor="bg-neutral-700" small={true} />
+      activeColor="bg-red-600" inactiveColor="bg-neutral-800" small={true} />
     <ToggleButton active={isSoloed} onclick={toggleSolo} label="S"
-      activeColor="bg-yellow-500" inactiveColor="bg-neutral-700"
+      activeColor="bg-yellow-500" inactiveColor="bg-neutral-800"
       activeTextColor="text-black" small={true} />
     <ToggleButton active={isArmed} onclick={toggleArm} label="R"
-      activeColor="bg-red-600" inactiveColor="bg-neutral-700" small={true} />
+      activeColor="bg-red-600" inactiveColor="bg-neutral-800" small={true} />
     <button
       type="button"
       onclick={cycleMonitor}
       class="min-w-8 min-h-8 px-1.5 py-1 text-xs rounded font-bold
              {recMon === 'on' ? 'bg-green-700 text-white'
-              : recMon === 'auto' ? 'bg-neutral-600 text-green-400'
-              : 'bg-neutral-700 text-neutral-500'}"
+              : recMon === 'auto' ? 'bg-neutral-700 text-green-400'
+              : 'bg-neutral-800 text-neutral-500'}"
     >{recMon === 'auto' ? 'A' : 'MON'}</button>
   </div>
 

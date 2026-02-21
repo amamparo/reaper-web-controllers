@@ -31,7 +31,7 @@
       type="button"
       onclick={stop}
       class="w-14 h-14 rounded-lg flex items-center justify-center text-2xl
-             {transportStore.playState === 0 ? 'bg-neutral-600 text-white' : 'bg-neutral-800 text-neutral-400'}
+             {transportStore.playState === 0 ? 'bg-neutral-700 text-white' : 'bg-neutral-900 text-neutral-400'}
              active:brightness-75"
     >&#9632;</button>
 
@@ -39,7 +39,7 @@
       type="button"
       onclick={play}
       class="w-14 h-14 rounded-lg flex items-center justify-center text-2xl
-             {transportStore.isPlaying ? 'bg-green-700 text-white' : 'bg-neutral-800 text-neutral-400'}
+             {transportStore.isPlaying ? 'bg-green-700 text-white' : 'bg-neutral-900 text-neutral-400'}
              active:brightness-75"
     >&#9654;</button>
 
@@ -47,7 +47,7 @@
       type="button"
       onclick={pause}
       class="w-14 h-14 rounded-lg flex items-center justify-center text-xl
-             {transportStore.isPaused ? 'bg-amber-700 text-white' : 'bg-neutral-800 text-neutral-400'}
+             {transportStore.isPaused ? 'bg-amber-700 text-white' : 'bg-neutral-900 text-neutral-400'}
              active:brightness-75"
     >&#9646;&#9646;</button>
 
@@ -56,7 +56,7 @@
       onclick={record}
       aria-label="Record"
       class="w-14 h-14 rounded-lg flex items-center justify-center
-             {transportStore.isRecording ? 'bg-red-600 text-white' : 'bg-neutral-800 text-red-400'}
+             {transportStore.isRecording ? 'bg-red-600 text-white' : 'bg-neutral-900 text-red-400'}
              active:brightness-75"
     >
       <span class="w-6 h-6 rounded-full

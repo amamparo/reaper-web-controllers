@@ -17,7 +17,7 @@
 
 <select
   onchange={handleChange}
-  class="w-full bg-neutral-800 text-neutral-200 border-none rounded-2xl text-lg p-3 outline-none"
+  class="w-full bg-neutral-900 text-neutral-200 border-none rounded-2xl text-lg p-3 outline-none"
 >
   <option value="">Select your monitor track...</option>
   {#each monitorTracks as track}

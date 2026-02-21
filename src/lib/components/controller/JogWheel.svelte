@@ -91,16 +91,16 @@
 >
   <svg viewBox="0 0 120 120" class="w-full h-full" style="transform: rotate({rotation}deg)">
     <!-- Outer ring -->
-    <circle cx="60" cy="60" r="55" fill="none" stroke="#444" stroke-width="6" />
+    <circle cx="60" cy="60" r="55" fill="none" stroke="#333" stroke-width="6" />
     <!-- Inner disc -->
-    <circle cx="60" cy="60" r="45" fill="#2a2a2a" />
+    <circle cx="60" cy="60" r="45" fill="#111" />
     <!-- Notch lines for rotation feedback -->
-    <line x1="60" y1="18" x2="60" y2="28" stroke="#666" stroke-width="2" />
-    <line x1="60" y1="92" x2="60" y2="102" stroke="#444" stroke-width="2" />
-    <line x1="18" y1="60" x2="28" y2="60" stroke="#444" stroke-width="2" />
-    <line x1="92" y1="60" x2="102" y2="60" stroke="#444" stroke-width="2" />
+    <line x1="60" y1="18" x2="60" y2="28" stroke="#555" stroke-width="2" />
+    <line x1="60" y1="92" x2="60" y2="102" stroke="#333" stroke-width="2" />
+    <line x1="18" y1="60" x2="28" y2="60" stroke="#333" stroke-width="2" />
+    <line x1="92" y1="60" x2="102" y2="60" stroke="#333" stroke-width="2" />
     <!-- Center dot -->
-    <circle cx="60" cy="60" r="3" fill="#555" />
+    <circle cx="60" cy="60" r="3" fill="#444" />
   </svg>
 
   {#if jogDisplay}

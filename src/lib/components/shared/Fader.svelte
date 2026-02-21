@@ -135,7 +135,7 @@
     transform: translateY(-50%);
     height: 0.375rem;
     border-radius: 2px;
-    background: #1a1a1a;
+    background: #0a0a0a;
     box-shadow: inset 0 1px 2px rgba(0,0,0,0.6);
     z-index: 0;
     pointer-events: none;
@@ -233,7 +233,7 @@
     z-index: 1;
     width: 2px;
     height: 1.25rem;
-    background: #525252;
+    background: #404040;
     pointer-events: none;
     border-radius: 1px;
   }

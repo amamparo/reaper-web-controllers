@@ -15,20 +15,20 @@
     onclick={toggleMetronome}
     label="METRO"
     activeColor="bg-sky-700"
-    inactiveColor="bg-neutral-800"
+    inactiveColor="bg-neutral-900"
   />
   <ToggleButton
     active={transportStore.snapOn}
     onclick={toggleSnap}
     label="SNAP"
     activeColor="bg-sky-700"
-    inactiveColor="bg-neutral-800"
+    inactiveColor="bg-neutral-900"
   />
   <ToggleButton
     active={transportStore.repeatOn}
     onclick={toggleRepeat}
     label="LOOP"
     activeColor="bg-teal-700"
-    inactiveColor="bg-neutral-800"
+    inactiveColor="bg-neutral-900"
   />
 </div>

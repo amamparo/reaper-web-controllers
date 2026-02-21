@@ -26,7 +26,7 @@
 
 {#if send && sourceTrack}
   <div
-    class="flex flex-col gap-1 p-3 rounded-lg bg-neutral-800/50 transition-opacity"
+    class="flex flex-col gap-1 p-3 rounded-lg bg-neutral-900/50 transition-opacity"
     class:opacity-40={anySolo && !soloed}
   >
     <!-- Header: color dot + name + solo + mute -->
@@ -43,7 +43,7 @@
         onclick={onToggleSolo}
         label="S"
         activeColor="bg-yellow-600"
-        inactiveColor="bg-neutral-700"
+        inactiveColor="bg-neutral-800"
         small={true}
       />
       <ToggleButton
@@ -51,7 +51,7 @@
         onclick={toggleMute}
         label="M"
         activeColor="bg-red-600"
-        inactiveColor="bg-neutral-700"
+        inactiveColor="bg-neutral-800"
         small={true}
       />
     </div>

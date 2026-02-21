@@ -29,14 +29,14 @@
 <div class="min-h-screen max-w-2xl mx-auto p-4 flex flex-col gap-4">
   {#if hasSelection}
     <!-- Mix view -->
-    <div class="flex items-center gap-3">
-      <button
-        type="button"
-        onclick={goBack}
-        class="text-sm text-neutral-400 active:text-neutral-200"
-      >&larr;</button>
-      <h1 class="text-xl font-bold text-neutral-200">{selectedTrack?.name ?? ''}</h1>
-    </div>
+    <button
+      type="button"
+      onclick={goBack}
+      class="inline-flex items-center gap-3 min-h-11 active:text-neutral-200 self-start"
+    >
+      <span class="text-sm text-neutral-400">&larr;</span>
+      <span class="text-xl font-bold text-neutral-200">{selectedTrack?.name ?? ''}</span>
+    </button>
 
     <MasterOutput />
     <ReceiveList />
@@ -49,7 +49,7 @@
         <button
           type="button"
           onclick={() => selectTrack(track.index)}
-          class="flex items-center gap-3 p-4 rounded-lg bg-neutral-800 active:bg-neutral-700 transition-colors text-left"
+          class="flex items-center gap-3 p-4 rounded-lg bg-neutral-900 active:bg-neutral-800 transition-colors text-left"
         >
           <div
             class="w-4 h-4 rounded-full shrink-0"

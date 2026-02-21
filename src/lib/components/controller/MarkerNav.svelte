@@ -41,7 +41,7 @@
   <button
     type="button"
     onclick={gotoPrev}
-    class="flex items-center gap-1 min-h-11 px-2 py-1 rounded bg-neutral-800 active:brightness-75 flex-1 min-w-0"
+    class="flex items-center gap-1 min-h-11 px-2 py-1 rounded bg-neutral-900 active:brightness-75 flex-1 min-w-0"
   >
     <span class="text-neutral-500 text-xs shrink-0">&laquo;</span>
     {#if nav.prev}
@@ -57,7 +57,7 @@
 
   <!-- Current / Drop marker -->
   {#if nav.current}
-    <div class="flex items-center gap-1 px-2 py-1 rounded bg-neutral-700 min-h-11">
+    <div class="flex items-center gap-1 px-2 py-1 rounded bg-neutral-800 min-h-11">
       <span
         class="inline-flex items-center justify-center w-5 h-5 rounded text-[10px] font-bold shrink-0"
         style="background-color: {markerColor(nav.current)}; color: {markerTextColor(nav.current)}"
@@ -68,7 +68,7 @@
     <button
       type="button"
       onclick={dropMarker}
-      class="min-h-11 px-3 py-1 rounded bg-neutral-800 text-neutral-500 text-xs
+      class="min-h-11 px-3 py-1 rounded bg-neutral-900 text-neutral-500 text-xs
              active:brightness-75 hover:text-neutral-300"
       title="Drop marker"
     >+M</button>
@@ -78,7 +78,7 @@
   <button
     type="button"
     onclick={gotoNext}
-    class="flex items-center gap-1 min-h-11 px-2 py-1 rounded bg-neutral-800 active:brightness-75 flex-1 min-w-0"
+    class="flex items-center gap-1 min-h-11 px-2 py-1 rounded bg-neutral-900 active:brightness-75 flex-1 min-w-0"
   >
     {#if nav.next}
       <span class="text-xs text-neutral-400 truncate">{nav.next.name || 'unnamed'}</span>

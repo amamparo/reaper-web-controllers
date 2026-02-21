@@ -4,7 +4,7 @@
     onclick,
     label = '',
     activeColor = 'bg-red-600',
-    inactiveColor = 'bg-neutral-700',
+    inactiveColor = 'bg-neutral-800',
     activeTextColor = 'text-white',
     inactiveTextColor = 'text-neutral-400',
     small = false,

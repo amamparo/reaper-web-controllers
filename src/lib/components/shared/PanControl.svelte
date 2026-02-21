@@ -42,7 +42,7 @@
     ontouchend={handleEnd}
     class="w-20 h-8 appearance-none bg-transparent cursor-pointer touch-none
            [&::-webkit-slider-runnable-track]:rounded-full
-           [&::-webkit-slider-runnable-track]:bg-neutral-800
+           [&::-webkit-slider-runnable-track]:bg-neutral-900
            [&::-webkit-slider-runnable-track]:h-1.5
            [&::-webkit-slider-thumb]:appearance-none
            [&::-webkit-slider-thumb]:rounded-full
@@ -51,7 +51,7 @@
            [&::-webkit-slider-thumb]:h-6
            [&::-webkit-slider-thumb]:mt-[-10px]
            [&::-moz-range-track]:rounded-full
-           [&::-moz-range-track]:bg-neutral-800
+           [&::-moz-range-track]:bg-neutral-900
            [&::-moz-range-track]:h-1.5
            [&::-moz-range-thumb]:rounded-full
            [&::-moz-range-thumb]:bg-neutral-400

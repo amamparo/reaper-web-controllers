@@ -14,7 +14,7 @@
 
 <div class="min-h-screen flex flex-col lg:flex-row">
   <!-- Left column: transport, jog, nav, utilities -->
-  <div class="lg:w-[380px] lg:shrink-0 p-4 flex flex-col gap-4 lg:h-screen lg:overflow-y-auto lg:border-r lg:border-neutral-800">
+  <div class="lg:w-[380px] lg:shrink-0 p-4 flex flex-col gap-4 lg:h-screen lg:overflow-y-auto lg:border-r lg:border-neutral-900">
     <TransportBar />
     <JogWheel />
     <NavPanel />

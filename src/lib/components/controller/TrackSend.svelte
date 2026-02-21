@@ -47,7 +47,7 @@
       onclick={toggleMute}
       label="M"
       activeColor="bg-red-600"
-      inactiveColor="bg-neutral-700"
+      inactiveColor="bg-neutral-800"
       small={true}
     />
   </div>
